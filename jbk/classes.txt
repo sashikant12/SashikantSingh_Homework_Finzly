@@ -1,0 +1,134 @@
+class RentHouse{
+Room room;
+}
+
+class Room{
+BedRoom[] bedroom;
+Hall hall;
+Kitchen kitchen;
+StoreRoom storeRoom;
+BathRoom[] bathRoom;
+}
+
+class BedRoom{
+Bed[] bed;
+Fan[] fan;
+Light[] light;
+SwitchBoard[] switchBoard;
+Photograph[] photograph;
+int ac;
+Wardrobe[] wardrobe;
+Windows[] windows;
+int  table;
+}
+
+class Bed{
+int Bedsheet;
+int pillow;
+int Blanket;
+}
+
+class Fan{
+int cellingFan;
+// if ac==0
+int exhaust fan;
+}
+
+class Light{
+int ledLight;
+int lamp;
+int nightBlub;
+}
+
+class Photograph{
+int family;
+int soloPhoto;
+int friendPhoto;
+int desingerPainting;
+int WallPainting;
+}
+
+class SwitchBoard{
+int acSwitchBoard;
+int otherApplianceBoard;
+}
+
+class Wardrobe{
+int drawer;
+}
+
+class Windows{
+int window;
+}
+
+class Hall {
+Light light;
+Fan fan;
+SwitchBoard switchBoard;
+Photograph photograph;
+Windows windows;
+Sofa sofa;
+DinningTable dinningTable;
+int tv;
+}
+
+class Sofa{
+int sofaSet;
+int miniTable;
+}
+
+class DinningTable{
+ KitchenCabinet[] kitchenCabinate;
+}
+
+class KitchenCabinet{
+int plate;
+int spoons;
+int cups;
+int tray;
+}
+
+class Kitchen{
+int gasCylinder;
+int Stove;
+int induction;
+KitchenCabinet[] kitchenCabinate;
+Windows windows;
+SwitchBoard switchBoard;
+Homeappliance Homeappliance;
+Sink sink;
+Tap tap;
+}
+ 
+class Homeappliance{
+int fridge;
+int oven;
+Wardrobe wardrobe;
+}
+
+Sink sink{
+int sink;
+}
+
+Tap{
+int tap;
+}
+
+
+class StoreRoom{
+Light light;
+Fan[] fan;
+Light[] light;
+SwitchBoard[] switchBoard;
+Photograph []photograph;
+SwitchBoard[] switchBoard;
+}
+
+class Bathroom{
+Sink sink;
+Tap tap;
+int bucket;
+int mug;
+int commode;
+int shower;
+}

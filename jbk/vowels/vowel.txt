@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String v = "aeiou";
+        System.out.println("Enter String");
+        String name = sc.nextLine();
+        String name1 = name.toLowerCase();
+        int d=0,s=0;
+        for(int i=0;i<v.length();i++){
+            for(int j=0;j<name1.length();j++){
+             if(v.charAt(i)==name1.charAt(j)){
+                 d++;
+                 s += d;
+                 d=0;
+                 break;
+             }
+            if(s==5)break;
+            }
+        }
+            if(s==5){
+                System.out.println("accepted");
+            }
+            else {
+                System.out.println("not accepted");
+            }
+    }
+}
