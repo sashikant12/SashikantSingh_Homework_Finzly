@@ -18,7 +18,7 @@ public class TradeBook implements TradeList {
 
             }
             // check weather name contain only alphabet
-            if (!customerName.matches("^[a-zA-Z ]+$")) {
+           if (!customerName.matches("^[a-zA-Z ]+.$")) {
                 System.out.println("Try again with valid name");
                 System.out.println("-".repeat(200));
                 continue;
