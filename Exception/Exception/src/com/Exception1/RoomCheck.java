@@ -19,7 +19,6 @@ public class RoomCheck{
     public RoomCheck() {
         ress.put("Room", rooms);
         ress.put("EventHall", halls);
-        ress.put("SpaServices", spas);
     }
 
     public String getType() {
@@ -38,9 +37,9 @@ public class RoomCheck{
         this.guest = guest;
     }
 
-    public void makeReservation(String type, int no, Guest guest, String roomType) throws InvalidReservationException, RoomNotFoundException{
+    public void makeReservation(String type, int no, Guest guest, String roomType) throws AdmiSahiNhiHaiException, Room_Nhi_Hai_Exception {
         if(no<1 || no>10) {
-            throw new RoomNotFoundException("Invalid room no");
+            throw new Room_Nhi_Hai_Exception("Invalid room no");
         }
         else {
             switch(type) {
@@ -58,11 +57,11 @@ public class RoomCheck{
                             rooms.put(no, guest);
                         }
                         else {
-                            throw new RoomNotFoundException("Invalid room type");
+                            throw new Room_Nhi_Hai_Exception("Invalid room type");
                         }
                     }
                     else {
-                        throw new InvalidReservationException("Room already booked");
+                        throw new Room_Nhi_Hai_Exception("Room already booked");
                     }
                     break;
 
@@ -73,7 +72,7 @@ public class RoomCheck{
                         halls.put(no, guest);
                     }
                     else {
-                        throw new InvalidReservationException("EventHall already booked");
+                        throw new AdmiSahiNhiHaiException("EventHall already booked");
 
                     }
                     break;
@@ -85,7 +84,7 @@ public class RoomCheck{
                         spas.put(no, guest);
                     }
                     else {
-                        throw new InvalidReservationException("SpaServices already booked");
+                        throw new AdmiSahiNhiHaiException("SpaServices already booked");
 
                     }
                     break;
@@ -106,7 +105,7 @@ public class RoomCheck{
         }
     }
 
-    public void unReservation(String type, int no) throws RoomNotFoundException {
+    public void unReservation(String type, int no) throws Room_Nhi_Hai_Exception {
         boolean b = false;
         for(Map.Entry<String, Map<Integer, Guest>> entry : ress.entrySet()) {
             String outer = entry.getKey();
@@ -125,7 +124,7 @@ public class RoomCheck{
             System.out.println("Reservation deleted");
         }
         else {
-            throw new RoomNotFoundException("Invalid room no");
+            throw new Room_Nhi_Hai_Exception("Invalid room no");
         }
     }
 
@@ -133,14 +132,5 @@ public class RoomCheck{
     public String toString() {
         return "Reservation [no=" + no + ", type=" + type + ", guest=" + guest + "]";
     }
-
-
-
-
-
-
-
-
-
 
 }
