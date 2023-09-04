@@ -82,7 +82,7 @@ public class Main {
 
             res.makeReservation(type, doorNumber, guest, roomType);
         }
-        catch (InputMismatchException | InvalidReservationException | RoomNotFoundException e) {
+        catch (InputMismatchException | AdmiSahiNhiHaiException | Room_Nhi_Hai_Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
         finally {
@@ -112,7 +112,7 @@ public class Main {
 
             res.unReservation(type, doorNumber);
         }
-        catch (InputMismatchException | RoomNotFoundException e) {
+        catch (InputMismatchException | Room_Nhi_Hai_Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
         finally {
